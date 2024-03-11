@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package transaction;
+
+message SumAmountRequest {
+    int64 user_id = 1;
+    int64 start_time = 2;
+    int64 end_time = 3;
+}
+
+message SumAmountResponse {
+    double total_amount = 1;
+}
+
+service TransactionServer {
+    rpc sum_amount(SumAmountRequest) returns (SumAmountResponse) {}
+}
